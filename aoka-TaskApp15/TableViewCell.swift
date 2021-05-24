@@ -9,8 +9,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var checkImage: UIImageView!
     
     func configure(checkItem: CheckItem) {
         nameLabel.text = checkItem.name
