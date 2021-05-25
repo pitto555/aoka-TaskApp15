@@ -33,16 +33,19 @@ class FirstViewController: UIViewController {
     }
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
-        Router.showSeconde(flom: self)
-    }
-    
-    @IBAction func cancel(segue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func save(segue: UIStoryboardSegue) {
-        guard let secondeVC = segue.source as? SecondeViewController, let name = secondeVC.nameText else {return}
-        checkItems.append(CheckItem(name: name, isChecked: false))
-        tableView.reloadData()
+        Router.showSecond(
+            from: self,
+            actionHandler: { [weak self] in
+                switch $0 {
+                case .save(let name):
+                    self?.checkItems.append(CheckItem(name: name, isChecked: false))
+                    self?.tableView.reloadData()
+                case .cancel:
+                    break
+                }
+                self?.dismiss(animated: true, completion: nil)
+            }
+        )
     }
 }
 
@@ -58,8 +61,7 @@ extension FirstViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let check = checkItems[indexPath.row].isChecked
-        checkItems[indexPath.row].isChecked = !check
+        checkItems[indexPath.row].isChecked.toggle()
         self.tableView.reloadData()
     }
 }

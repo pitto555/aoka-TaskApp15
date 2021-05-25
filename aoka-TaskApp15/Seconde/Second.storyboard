@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0YN-Yq-QLi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0YN-Yq-QLi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Seconde View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="ZWE-GT-cYf">
             <objects>
-                <viewController id="0YN-Yq-QLi" customClass="SecondeViewController" customModule="aoka_TaskApp15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0YN-Yq-QLi" customClass="SecondViewController" customModule="aoka_TaskApp15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCo-gt-zqW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="4B9-sC-gXJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PWx-Sq-B30">
                             <connections>
-                                <segue destination="YgA-tM-Clh" kind="unwind" unwindAction="cancelWithSegue:" id="HXp-9u-5YR"/>
+                                <action selector="cancelButtonAction:" destination="0YN-Yq-QLi" id="1K7-No-sfb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="41T-pY-zMM">
@@ -59,11 +59,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="QEC-0U-OFn" id="PTZ-Ia-3zn"/>
-                        <segue destination="YgA-tM-Clh" kind="unwind" identifier="saveSegue" unwindAction="saveWithSegue:" id="DOD-jV-0Vc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wiy-ld-t1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="YgA-tM-Clh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="742.02898550724649" y="131.91964285714286"/>
         </scene>
